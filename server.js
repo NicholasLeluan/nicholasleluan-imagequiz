@@ -30,7 +30,7 @@ app.get('/quizzes', (request, response) => {
 
 app.get('/questions/:quizid', (request,response) => {
     let quizID = request.params.quizid;
-    let found = data.quizzes.find(x => x.id == searchID);
+    let found = data.quizzes.find(x => x.id == quizID);
     if (found){
         response.json(found.questions);
     }
