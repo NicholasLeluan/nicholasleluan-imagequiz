@@ -21,6 +21,8 @@ let quiz3 = {name: 'quiz3', id: 3, image: 'quiz3.png', questions: [q7,q8,q9,q10]
 
 const quizzes = [quiz1,quiz2,quiz3]
 
+let scores = [];
 
 
+module.exports.score = scores;
 module.exports.quizzes = quizzes;
