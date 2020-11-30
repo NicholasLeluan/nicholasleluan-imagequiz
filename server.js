@@ -28,9 +28,21 @@ app.get('/quizzes', (request, response) => {
     response.json(metadata); 
 });
 
+app.get('/questions/:quizid', (request,response) => {
+    let quizID = request.params.quizid;
+    let found = data.quizzes.find(x => x.id == searchID);
+    if (found){
+        response.json(found.questions);
+    }
+    else{
+        response.status(404).json({error: "this quiz id: "+ searchID +" does not match any quiz id on record."});
+    }
+
+
+});
+
 app.get('/quiz/:id', (request,response) => {
     let searchID = request.params.id;
-    console.log("HERE")
     let found = data.quizzes.find(x => x.id == searchID);
     if (found){
         response.json(found);
