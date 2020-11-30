@@ -9,8 +9,11 @@ const app = express();
 //MIDDLEWEAR
 app.use(cors()); //allows requests from anywhere to be accepted; this could accept specific IP addresses
 app.use(bodyParser.json()); //a request that comes in is converted from byte array to a JSON object
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
-//.env is a file that will will added when the project is deplpyed
+//.env is a file that will will added when the project is deployed
+//Heroku will use the process.env.PORT || Our machine uses port 3069 on localhost
 const port = process.env.PORT || 3069;
 
 //WE USE RESPONSE TO SEND THE REQUEST BACK TO THE CLIENT --> LIKE A RETURN 
@@ -23,24 +26,25 @@ app.get('/', (request, response) => {
 //on the homepage
 app.get('/quizzes', (request, response) => {
     let metadata = data.quizzes.map(x => {
-        return {name: x.name, id: x.id, image: x.image};
+        return {title: x.title, id: x.id, image: x.image};
     });
     response.json(metadata); 
 });
 
+
+//THIS GET JUST THE QUESTIONS TO THE QUIZ
 app.get('/questions/:quizid', (request,response) => {
     let quizID = request.params.quizid;
-    let found = data.quizzes.find(x => x.id == quizID);
+    let found = data.quizzes.find(x => x.id === Number(quizID));
     if (found){
         response.json(found.questions);
     }
     else{
         response.status(404).json({error: "this quiz id: "+ searchID +" does not match any quiz id on record."});
     }
-
-
 });
 
+//THIS GETS ALL THE DATA TO THE PASSED IN QUIZ ID
 app.get('/quiz/:id', (request,response) => {
     let searchID = request.params.id;
     let found = data.quizzes.find(x => x.id == searchID);
