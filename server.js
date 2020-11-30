@@ -31,7 +31,7 @@ app.get('/quizzes', (request, response) => {
 app.get('/quiz/:id', (request,response) => {
     let searchID = request.params.id;
     console.log("HERE")
-    let found = data.quizzes.find(x => x.id === searchID);
+    let found = data.quizzes.find(x => x.id == searchID);
     if (found){
         response.json(found);
     }
