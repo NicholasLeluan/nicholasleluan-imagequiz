@@ -36,7 +36,7 @@ app.get('/quiz/:id', (request,response) => {
         response.json(found);
     }
     else{
-        response.status(404).json({error: "this quiz id: ${searchID} does not match any quiz id on record."});
+        response.status(404).json({error: "this quiz id: "+ searchID +" does not match any quiz id on record."});
     }
 });
 
