@@ -66,7 +66,7 @@ app.get('/quiz/:id', (request,response) => {
 
 //Like in a form, make sure the name of any input matches this below
 //for imagequiz: username is the corect input name for the login!
-app.post('./score', (request,response) => {
+app.post('/score', (request,response) => {
     let username = request.body.username;
     let quizid = request.body.quizid;
     let score = request.body.score;
