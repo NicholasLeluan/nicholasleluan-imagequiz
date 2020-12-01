@@ -84,19 +84,19 @@ const q12 = {
 }
 
 const quiz1 = {
-    title: 'Quiz 1',
+    title: 'Simpsons Quiz',
     id: 1,
     image: 'bart.png',
     questions: [q1, q2, q3, q4],
 }
 const quiz2 = {
-    title: 'Quiz 2',
+    title: 'Family Guy Quiz',
     id:2,
     image: 'stewie.png',
     questions: [q5, q6, q7,q8],
 }
 const quiz3 = {
-    title: 'Quiz 3',
+    title: 'Pokemon Quiz',
     id: 3,
     image: 'pikachu.png',
     questions: [q9,q10,q11,q12],
