@@ -1,7 +1,7 @@
 const q1 = {
     //simpsons
     title: 'Who is this?',
-    picture: 'bart.jpg',
+    picture: 'bart.png',
     choices: ['Bart', 'Homer', 'Lisa', 'Marge'],
     correct: 'Bart'
 }
