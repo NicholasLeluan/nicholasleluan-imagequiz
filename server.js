@@ -36,7 +36,7 @@ app.get('/highscores',(request,response) => {
         return {username: x.username, quizid = x.quizid, score: x.score}
     });
     response.json(metadata);
-})
+});
 
 
 //THIS GET JUST THE QUESTIONS TO THE QUIZ
