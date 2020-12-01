@@ -31,12 +31,12 @@ app.get('/quizzes', (request, response) => {
     response.json(metadata); 
 });
 
-// app.get('/highscores',(request,response) => {
-//     let metadata = data.scores.map(x => {
-//         return {username: x.username, quizid = x.quizid, score: x.score}
-//     });
-//     response.json(metadata);
-// });
+ app.get('/highscores',(request,response) => {
+    let metadata = data.scores.map(x => {
+         return {username: x.username, quizid: x.quizid, score: x.score}
+     });
+     response.json(metadata);
+ });
 
 
 //THIS GET JUST THE QUESTIONS TO THE QUIZ
