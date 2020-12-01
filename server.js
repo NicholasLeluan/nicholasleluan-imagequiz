@@ -33,7 +33,7 @@ app.get('/quizzes', (request, response) => {
 
  app.get('/highscores',(request,response) => {
     let metadata = data.scores.map(x => {
-         return {username: x.username, quizid: x.quizid, score: x.score}
+         return {username: x.username, quizid: x.quizid, score: x.score};
      });
      response.json(metadata);
  });
